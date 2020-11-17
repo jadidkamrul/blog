@@ -42,13 +42,14 @@ class CategoryController extends Controller
         $category->catName = $request->cat_name;
         $category->desc = $request->cat_desc;
         $category->save();
+        return redirect('admin/viewCategory')->with('status', 'Category  is Added');
     }
 
 
     public function getAllCategories(){
         $categories = Category::all();
         return view('backend.category.allCategories',compact('categories'));
-        }
+    }
 
 
     /**

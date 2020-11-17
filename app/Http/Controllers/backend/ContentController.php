@@ -27,7 +27,8 @@ class ContentController extends Controller
     public function contentCreate()
     {
        $categories =  Category::all();
-        return view('backend.content.create')->with('categories', $categories);;
+        return view('backend.content.create')->with('categories', $categories);
+
     }
 
     /**
@@ -44,15 +45,12 @@ class ContentController extends Controller
         $category->contentDesc = $request->content_desc;
         $category->save();
         return redirect('admin/viewContent')->with('status', 'Content is Added');
+
     }
 
 
     public function getAllContents(){
-        //$contents = Content::all();
-
         $contents =  Content::with('category')->get();
-
-
         return view('backend.content.allContents',compact('contents'));
     }
 

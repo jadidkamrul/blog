@@ -22,17 +22,19 @@
                     <div class="row">
                         <div class="col-lg-12">
 
-                            <div class="card-body">
-                                <div class="col-md-5"></div>
-                                <div class="col-md-5">
-                                    asdf
-                                    @if(session()->has('message'))
-                                            asdfas
+                            <div class="row justify-content-md-center">
+                                <div class="col col-lg-2"></div>
+                                    <div class="col-md-auto">
+                                        @if(session()->has('status'))
+                                        <div class="alert alert-primary" role="alert">
                                             {{ session()->get('status') }}
+                                        @endif
 
-                                    @endif
-                                </div>
-
+                                        </div>
+                                    </div>
+                                <div class="col col-lg-2"></div>
+                            </div>
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
@@ -58,7 +60,7 @@
                                           <tr>
                                             <td> {{ $content->contentName }}</td>
                                             <td>{{ $content->contentDesc }}</td>
-                                            <td>{{ $content->category_id }}</td>
+                                            <td>{{ $content->category->catName }}</td>
                                             <th>
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                                 <button type="submit" class="btn btn-success">Edit</button>
