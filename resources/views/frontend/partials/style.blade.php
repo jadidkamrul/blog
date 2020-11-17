@@ -1,0 +1,9 @@
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}  ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/font-awesome.min.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/animate.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/font.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/li-scroller.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/slick.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/jquery.fancybox.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.css') }} ">
+<link rel="stylesheet" type="text/css" href="{{ url('assets/css/style.css') }} ">
