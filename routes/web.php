@@ -30,6 +30,7 @@ Route::get('/', 'backend\AdminController@index');
 Route::get('/addCategory', 'backend\CategoryController@categoryCreate');
 Route::get('/addContent', 'backend\ContentController@contentCreate');
 Route::get('/viewCategory', 'backend\CategoryController@getAllCategories');
+Route::get('/viewContent', 'backend\ContentController@getAllContents');
 
 Route::post('/categoryStore', 'backend\CategoryController@categoryStore')->name('categoryStore');
 Route::post('/contentStore', 'backend\ContentController@contentStore')->name('contentStore');

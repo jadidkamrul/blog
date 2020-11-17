@@ -21,13 +21,25 @@
                     <!-- Nested Row within Card Body -->
                     <div class="row">
                         <div class="col-lg-12">
+
                             <div class="card-body">
+                                <div class="col-md-5"></div>
+                                <div class="col-md-5">
+                                    asdf
+                                    @if(session()->has('message'))
+                                            asdfas
+                                            {{ session()->get('status') }}
+
+                                    @endif
+                                </div>
+
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Description</th>
+                                                <th>Category</th>
                                                 <th>Action</th>
 
                                             </tr>
@@ -36,15 +48,17 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Description</th>
+                                                <th>Category</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
 
-                                            @foreach ($categories as $category)
+                                            @foreach ($contents as $content)
                                           <tr>
-                                            <td> {{ $category->catName }}</td>
-                                            <td>{{ $category->catDesc }}</td>
+                                            <td> {{ $content->contentName }}</td>
+                                            <td>{{ $content->contentDesc }}</td>
+                                            <td>{{ $content->category_id }}</td>
                                             <th>
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                                 <button type="submit" class="btn btn-success">Edit</button>

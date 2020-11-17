@@ -39,15 +39,21 @@ class ContentController extends Controller
     public function contentStore(Request $request)
     {
         $category = new Content;
-
-
-        // echo "<pre>";
-        // print_r( $request->category_id);
-        // die;
         $category->contentName = $request->content_name;
         $category->category_id  = $request->category_id;
         $category->contentDesc = $request->content_desc;
         $category->save();
+        return redirect('admin/viewContent')->with('status', 'Content is Added');
+    }
+
+
+    public function getAllContents(){
+        //$contents = Content::all();
+
+        $contents =  Content::with('category')->get();
+
+
+        return view('backend.content.allContents',compact('contents'));
     }
 
     /**

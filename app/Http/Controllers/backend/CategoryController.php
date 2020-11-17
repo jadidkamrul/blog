@@ -38,17 +38,10 @@ class CategoryController extends Controller
      */
     public function categoryStore(Request $request)
     {
-
-
-
-
         $category = new Category;
-
-
         $category->catName = $request->cat_name;
         $category->desc = $request->cat_desc;
         $category->save();
-
     }
 
 
