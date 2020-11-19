@@ -25,7 +25,7 @@
                         <div class="text-center">
                           <h1 class="h4 text-gray-900 mb-4">Create Content</h1>
                         </div>
-                        <form method="POST" action={{ route('contentStore') }} class="user">
+                        <form method="POST" action={{ route('contentStore') }} enctype="multipart/form-data" class="user">
                             @csrf
                           <div class="form-group">
                             <input type="text" name="content_name" class="form-control form-control-user"  placeholder="Create News Category">
@@ -40,9 +40,16 @@
                             </select>
                             </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file" name="file" class="form-control-file">
+                              </div>
+
                           <div class="form-group">
                             <textarea name="content_desc" class="form-control form-control-user"  rows="3"></textarea>
                           </div>
+
+
 
                           <input type="submit" class="btn btn-primary btn-user btn-block">
 

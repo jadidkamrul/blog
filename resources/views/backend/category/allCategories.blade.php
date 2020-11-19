@@ -21,6 +21,22 @@
                     <!-- Nested Row within Card Body -->
                     <div class="row">
                         <div class="col-lg-12">
+
+                            <div class="row justify-content-md-center">
+                                <div class="col col-lg-2"></div>
+                                    <div class="col-md-auto">
+                                        @if(session()->has('status'))
+                                        <div class="alert alert-primary" role="alert">
+                                            {{ session()->get('status') }}
+                                        @endif
+
+                                        </div>
+                                    </div>
+                                <div class="col col-lg-2"></div>
+                            </div>
+
+
+
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -42,6 +42,7 @@
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Category</th>
+                                                <th>Image</th>
                                                 <th>Action</th>
 
                                             </tr>
@@ -51,6 +52,7 @@
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Category</th>
+                                                <th>Image</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -60,6 +62,7 @@
                                           <tr>
                                             <td> {{ $content->contentName }}</td>
                                             <td>{{ $content->contentDesc }}</td>
+                                            <td><img src="{{ URL::to('/') }}/public/uploads/{{ $content->content_pic }}"> </td>
                                             <td>{{ $content->category->catName }}</td>
                                             <th>
                                                 <button type="submit" class="btn btn-danger">Delete</button>

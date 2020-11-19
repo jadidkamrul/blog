@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Category;
 use App\Content;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -39,11 +40,15 @@ class ContentController extends Controller
      */
     public function contentStore(Request $request)
     {
-        $category = new Content;
-        $category->contentName = $request->content_name;
-        $category->category_id  = $request->category_id;
-        $category->contentDesc = $request->content_desc;
-        $category->save();
+        $content = new Content;
+        $content->contentName = $request->content_name;
+        $content->category_id  = $request->category_id;
+        $content->contentDesc = $request->content_desc;
+        $files = $request->file('file');
+        $fileName = date('YmdHis').".". $files->getClientOriginalExtension();
+        $request->file->move(public_path('uploads'), $fileName);
+        $content->content_pic = $fileName;
+        $content->save();
         return redirect('admin/viewContent')->with('status', 'Content is Added');
 
     }
